@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Palatino Linotype", Arial;
+  transition: all 0.2s;
+  outline: none;
+  border-radius: 0.5vw;
+}
+
+input {
+  text-align: center;
+  outline: none;
+  border: 0;
+  background: unset;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+
+body {
+  background: url(../images/Background.png);
+  background-attachment: fixed;
+}
+
+.mainf{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.mainf>*{
+  filter: drop-shadow( 5px 5px 2px #00000096);
+}
+
+.triangle-bottomleft {
+  width: 0;
+  min-height: 50px;
+  border-bottom: 40px solid white;
+  border-left: 90vw solid transparent;
+  border-right: 0px solid transparent;
+  margin: 0 5%;
+}
+
+main {
+  margin: 0 5%;
+  width: 90vw;
+  background-color: white;
+}
+
+.triangle-topright {
+  width: 0;
+  border-top: 40px solid white;
+  border-right: 90vw solid transparent;
+  border-left: 0px solid transparent;
+  margin: 0 5%;
+}
+
+.toggle_theme{
+  /* opacity: 0.5; */
+  /* top: 20vw; */
+  /* left: 5vw; */
+  width: 100px;
+  height: 2vw;
+  /* border-radius: 1vw; */
+  position: relative;
+}
+
+.toggle-button {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  border-radius: 50vw;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+.toggle-button::after {
+  content: "";
+  
+  position: absolute;
+  left: 4%;
+  top: 5%;
+  
+  width: 40%;
+  height: 90%;
+  background-color: orange;
+  border-radius: 0.5vw;
+  
+  transform: translateX(0);
+  
+  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+.toggle-button:checked::after {
+  transform: translateX(calc(130%));
+  background-color: white;  
+}
+
+.toggle-button:checked {
+  /* background-color: blue; */
+}
+
+
+
+/* important============================================================ */
+/* important============================================================ */
+/* important============================================================ */
+
+
+.filter_fix {
+  width: 570px;  /* only for login */
+  height: 270px;  /* only for login */
+  display: flex;
+}
+
+.filter_fix>div {
+  flex-basis: 100%;
+}
+
+@media screen and (max-width: 620px) {
+
+  .filter_fix {
+    width: 88vw;  
+    height: 270px;  
+    display: flex;
+  }
+
+  .about{
+    display: none;
+  }
+
+  .conf_button_b {
+    margin-top: 40px !important;
+    margin-right: 50px;
+  }
+
+  .mobile_fix{
+    margin-top: 3px !important;
+  }
+}
+
+.shadow{
+  filter: drop-shadow( 3px 3px 2px rgba(34, 60, 80, 0.5));
+}
+
+.filter_fix>div:nth-child(2) {
+  width: 100%;
+  z-index: 999;
+  margin-left: -100%;
+}    
+
+/* header============================================================ */
+
+header {
+  height: 70px;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  background-color: white;
+  filter: drop-shadow( 3px 3px 2px rgba(34, 60, 80, 0.5));
+  z-index: 999;
+}
+
+header .coach {
+  margin: 0 5%;
+  height: 70px;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  filter: drop-shadow( 3px 3px 2px rgba(34, 60, 80, 0.4));
+}
+
+.coach>div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+  border: 2px solid #000000;
+  height: 44px;
+}
+
+header .nobrdr{
+  border: 0px solid #000000;
+}
+
+header  .hamburger{
+  display: none;
+  border: 0;
+}
+
+header  .hamburger img{
+  height: 35px;
+  border-radius: 0;
+  padding: 4px;
+  cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1250px) {
+  header .logo>div {
+    display: none;
+  }
+}
+
+header .logo * {
+  padding: 0 5px;
+}
+
+header .logo img {
+  height: 60px;
+  width: auto;
+}
+
+header .lknick {
+  width: inherit;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+  display: flex;
+  text-align: center;
+}
+
+header .lknick>div{
+  margin-left: 15px;
+  max-width: 15vw;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}
+
+.avatar{
+  margin-left: 20px;
+  width: 60px;
+  height: 60px;
+  margin-right: 5px;
+}
+
+.avatar>div:nth-child(1){
+  background: unset !important;
+}
+
+.avatar img {
+  width: 58px;
+  height: 58px;
+  border-radius: 60px;
+  border: 2px solid #000000;
+}
+
+.coach .search>div {
+  color: gray;
+  font-weight: bold;
+  width: 235px;
+}
+
+.coach .search img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+.coach .search input{
+  width: 235px;
+  text-align: center;
+  background: unset;
+  outline: none;
+  border: 0px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 786px) {
+
+  header .search {
+    display: none;
+    border: 0;
+  }
+
+  header .lknick>div{
+    max-width: 30vw;
+  }
+
+  header .toggle_theme{
+    display: none;
+    border: 0;
+  }
+
+  header .hide {
+    display: none;
+    border: 0;
+  }
+
+  header .hamburger{
+    display: unset;
+    border: 2px solid #000000;
+  }
+
+}
+
+@media screen and (max-width: 536px) {
+
+  header .logo img {
+    height: 54px;
+    width: auto;
+  }
+
+  header .logo * {
+    padding: 0px;
+  }
+}
+
+
+
+
+/* main============================================================ */
+
+
+.profiles {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.listing {
+  width: 200px;
+  height: 300px;
+  padding: 5px 0px;
+  margin: 10px 50px;
+  background-color: antiquewhite;
+  border: 2px solid #000000;
+}
+
+.listing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.listing>div:nth-child(2){
+  margin-top: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 175px;
+}
+
+.listing:hover {
+  margin-top: 5px;
+  transform: rotate(3deg);
+  filter: drop-shadow( 10px 10px 4px rgba(34, 60, 80, 0.5));
+  margin-bottom: 15px;
+}
+
+.addnew {
+  background: url(../images/new_portrait.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.addnew>div {
+  width: 66px;
+  margin-bottom: 86px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.char_logo {
+  width: 165px;
+  height: 193px;
+}
+
+.char_logo>img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* footer============================================================ */
+
+footer {
+  background-color: black;
+  color: white;
+  height: 110px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  bottom: -3px;
+  width: 100%;
+}
+
+footer>div{
+  margin: 5px 5%;
+}
+
+.about {
+  text-align: left;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  background: url(../images/company_logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+.hamburger_main{
+  display: none;
+  flex-direction: column;
+  margin-top: 70px;
+  background-color: #ffffff;
+}
+
+
+.hamburger_main .coach {
+  margin: 0 5%;
+  height: 70px;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  filter: drop-shadow( 3px 3px 2px rgba(34, 60, 80, 0.4));
+}
+
+
+
+
+

@@ -1,0 +1,88 @@
+.floating_search{
+    top:60px;
+    width: 279px;
+    position: fixed;
+    z-index: 99999;
+    display: none;
+}
+
+.search_field {
+    max-height: 80vh;
+    background-color: white;
+    border: 1px solid black;
+    overflow-y: auto;
+    border-bottom-width: 0px;
+    border: 2px solid #000000;
+}
+
+.floating_search a { 
+    height: 110px;
+    margin: 0 5px;
+}
+
+.search_listing {
+    display: flex;
+    width: 90%;
+    margin: 10px auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: antiquewhite;
+    border: 2px solid #000000;
+}
+
+
+
+
+.search_listing>div:nth-child(2){
+    width: 200px;
+    margin-left: 10px;
+}
+
+.floating_search .char_logo {
+    margin-top: 0;
+    width: 80px;
+    height: 90px;
+    padding-right: 0;
+    border-radius: 20px;
+}
+
+.floating_search .strange {
+    width: 318px;
+    border: 1px solid black;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    
+}
+
+
+.hamburger_main .char_logo {
+    margin-top: 0;
+    width: 80px;
+    height: 90px;
+    padding-right: 0;
+    border-radius: 20px;
+}
+
+
+.hamburger_main .strange {
+    width: 318px;
+    border: 1px solid black;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    
+}
+
+
+@media screen and (max-width: 800px) {
+    .search_listing{
+        width: 40%;
+    }
+    .search_field{
+        border: 0;
+    }
+    .search_listing > div:nth-child(2) {
+        width: 75%;
+    }
+}
+

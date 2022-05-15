@@ -1,0 +1,118 @@
+.book{
+    font-size: 20px;
+    min-width: 455px;
+    display: flex;
+    margin-left: 5vw;
+}
+
+.right{
+    margin-left: 20px;
+}
+
+.book input, select, textarea{
+    font-size: 20px;
+    background-color: antiquewhite;
+}
+
+
+.book .char_logo{
+    border: 2px solid #000000;
+    width: 300px;
+    height: 400px;
+    /* width: 400px;
+    height: 460px; */
+}
+
+.char_info {
+    margin-right: 10vw;
+}
+
+.up {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+
+.down {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lll {
+    margin-right: 30px;
+}
+
+.book {
+    margin: 10px auto;
+    width: 90%;
+}
+
+.placeholder > div {
+    display: flex;
+    max-width: 380px;
+}
+
+.placeholder > div > p{
+    width: 180px;
+    max-width: 24vw;
+}
+
+#class_lvl {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.conf_button_b {
+    margin-left: 5vw;
+}
+
+.placeholder > div > div {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1330px) {
+    .book .nobrdr {
+        display: none;
+    }
+    .book .char_logo{
+        width: 145px;
+        height: 190px;
+    }
+
+    .book .down {
+        margin-left: -170px;
+    }
+}   
+
+
+@media screen and (max-width: 1000px) {
+    .book .nobrdr {
+        display: none;
+    }
+    .book .down {
+        flex-direction: column;
+    }
+        
+}
+
+
+@media screen and (max-width: 800px) {
+    .book .nobrdr {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 656px) {
+
+    .book{
+        font-size: 17px;
+    }
+    
+    
+    .book input, select, textarea{
+        font-size: 17px;
+    }
+}

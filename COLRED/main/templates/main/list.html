@@ -1,0 +1,166 @@
+{% extends 'main/header_base.html' %}
+{% block list %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/list.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/lk.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/login.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous">
+    </script>
+<!-- <script type="text/javascript" src="{% static 'main/js/login.js' %}"></script> -->
+{% endblock %}
+
+{% block title %}
+redacted
+{% endblock %}
+
+{% block username %}
+{{ username }}
+{% endblock %}
+
+{% block ava_image %}main/images/avatars/{{ avatar }}.png{% endblock %}
+
+{% block content %}
+<div id="popup" class="popup">
+    <div class="popup_body">
+        <div class="popup_content">
+            <a href="#the_header" class="popup_close">=X=</a>
+            <h3 class="popup_title">Выберите портрет песонажа</h3>
+            <br>
+            <form method="post" class="little_form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{portrait_form}}
+                <br>
+                <button type="submit" class="little_button">=V=</button>
+            </form>
+        </div>
+    </div>
+</div>
+<form method="post" class="big_form">
+    {% csrf_token %}
+
+    <div class="book">
+        <div class="left">
+            <a href="#popup">
+                <div class="char_logo">
+                    <img src="/media/{{current_character.portrait}}" alt="+">
+                </div>
+            </a>
+        </div>
+        <div class="right">
+            <div class="up">
+                <div class="char_info">
+                    <div class="placeholder lvl">
+                        <div>
+                            <p>Очки персонажа</p>
+                            <div id="class_lvl"></div>
+                        </div>
+                    </div>
+                    <div class="placeholder name">
+                        <div>
+                            <p>
+                                Имя персонажа:
+                            </p>
+                            {{ form.name }}
+                        </div>
+
+                    </div>
+                    <div class="placeholder">
+                        <div class="txt_fields">
+                            <p style="margin-top: 5px;">Раса: </p>
+                            {{ form.background }}
+                        </div>
+                        <div class="txt_fields">
+                            <p style="margin-top: 5px;">Божество: </p>
+                            {{ form.diety }}
+                        </div>
+                    </div>
+                    <div class="placeholder">
+                        <div class="txt_fields">
+                            <p style="margin-top: 5px;">Прошлое: </p>
+
+                            {{ form.origin }}
+                        </div>
+                    </div>
+                    <div class="placeholder">
+                        <div class="txt_fields">
+                            <p style="margin-top: 5px;">Мировозрение: </p>
+
+                            {{ form.worldview }}
+                        </div>
+                    </div>
+                </div>
+                <div class="nobrdr"></div>
+                <div class="nobrdr"></div>
+                <div class="nobrdr"></div>
+            </div>
+            <div class="down">
+                <div class="placeholder lll">
+                    <div>
+                        <p style="margin-top: 5px;">Сила: </p>
+                        {{ form.attrib_strength }}
+                    </div>
+                    <div>
+                        <p style="margin-top: 5px;">Ловкость: </p>
+                        {{ form.attrib_agility }}
+                    </div>
+                    <div>
+                        <p style="margin-top: 5px;">Интеллект: </p>
+                        {{ form.attrib_intelligence }}
+                    </div>
+                    <div>
+                        <p style="margin-top: 5px;">Здоровье: </p>
+                        {{ form.attrib_endurance }}
+                    </div>
+                
+                    <div>
+                        <p>Урон прямой</p>
+                        <div id="dmg_1"></div>
+                    </div>
+                    <div>
+                        <p>Урон ампл.</p>
+                        <div id="dmg_2"></div>
+                    </div>
+                </div>
+                <div class="placeholder">
+
+                    <div>
+                        <p style="margin-top: 5px;">Воля: </p>
+                        {{ form.attrib_wisdom }}
+                    </div>
+                    <div>
+                        <p style="margin-top: 5px;">Восприятие: </p>
+                        {{ form.attrib_charisma }}
+                    </div>
+                    <div>
+                        <p style="margin-top: 5px;">HP: </p>
+                        {{form.hp}}
+                    </div>
+                    <div>
+                        <p style="margin-top: 5px;">Скорость: </p>
+                        {{form.speed}}
+                    </div>
+                    <div>
+                        <p style="margin-top: 5px;">Движение: </p>
+                        {{ form.armour_class }}
+                    </div>
+                </div>
+                <div class="nobrdr"></div>
+                <div class="nobrdr"></div>
+                <div class="nobrdr"></div>
+            </div>
+
+        </div>
+
+        
+    </div>
+    <div class="btn_dv">
+        <button type="submit" class="conf_button_b">
+            <div>
+                <div>Редактировать</div>
+            </div>
+        </button>
+    </div>
+</form>
+<script type="text/javascript" src="{% static 'main/js/list.js' %}"></script>
+{% endblock %}

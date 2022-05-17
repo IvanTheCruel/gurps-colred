@@ -1,6 +1,23 @@
 // $( window ).resize(function() {
 //     $(".floating_search").css("display","none")
 // });
+function readCookie(name) {
+	var name_cook = name+"=";
+	var spl = document.cookie.split(";");
+	
+	for(var i=0; i<spl.length; i++) {
+		var c = spl[i];
+		while(c.charAt(0) == " ") {
+	        c = c.substring(1, c.length);
+		}
+		if(c.indexOf(name_cook) == 0) {
+			return c.substring(name_cook.length, c.length);
+		}
+	}
+	return null;
+}
+
+
 
 $( "#main_search" ).change(function() {
     value = $("#main_search").val().toLowerCase();
@@ -69,6 +86,7 @@ $( ".hamburger" ).on("click", function() {
 });
 var path;
 
+
 function temp_func() {
     $('#head_black').attr("href",path);
 }
@@ -94,8 +112,9 @@ $( "#toggle-button1" ).change(function() {
 window.onload = function(){
     path = $('#head_black').attr("href");
     console.log($("#toggle-button1").is(':checked'));
+    
     if($("#toggle-button1").is(':checked')){
         temp_func();
-    } else revert()
+    } else revert();
 }
 

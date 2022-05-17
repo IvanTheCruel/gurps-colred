@@ -96,3 +96,7 @@ a:hover{
 .book input, select, textarea{
     background-color: #253277 !important;
 }
+
+.popup_content{
+    background-color: #3e3f7d !important;
+}

@@ -24,9 +24,11 @@ redacted
 <div id="popup" class="popup">
     <div class="popup_body">
         <div class="popup_content">
-            <a href="#the_header" class="popup_close">=X=</a>
-            <h3 class="popup_title">Выберите портрет песонажа</h3>
-            <br>
+            <div>
+                <a href="#the_header" class="popup_close">=X=</a>
+                <h3 class="popup_title">Выберите портрет песонажа</h3>
+            </div>
+            
             <form method="post" class="little_form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{portrait_form}}

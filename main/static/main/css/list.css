@@ -116,3 +116,7 @@
         font-size: 17px;
     }
 }
+
+.little_form a{
+    display: block;
+}
